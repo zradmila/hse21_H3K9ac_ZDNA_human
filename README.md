@@ -1,25 +1,25 @@
 # hse21_H3K9ac_ZDNA_human
 
 ### Cтудент - Заикина Радмила
-| Организм      | Структура ДНК | Тип клеток | Гистоновая метка| .bed файл 1| .bed файл 2  |
-| ------------- |:-------------:|:----------:|:---------------:|:----------:|:------------:|
-| human(hg38)   | ZDNA          | K562       | H3K9ac          | ENCFF148UQI| ENCFF891CHI |
+| Организм      | Структура ДНК | Гистоновая метка | Тип клеток| .bed файл 1| .bed файл 2  |
+| ------------- |:-------------:|:----------------:|:---------:|:----------:|:------------:|
+| human(hg38)   | ZDNA          | H3K9ac           | K562      | ENCFF148UQI| ENCFF891CHI |
 
-С помощью команды wget были получены файлы с пиками:
+## Анализ пиков гистоновой метки
+
+С помощью команды wget были получены файлы с пиками ENCFF148UQI и ENCFF891CHI :
 
 `wget https://www.encodeproject.org/files/ENCFF148UQI/@@download/ENCFF148UQI.bed.gz` 
 
 `wget https://www.encodeproject.org/files/ENCFF891CHI/@@download/ENCFF891CHI.bed.gz`
 
-Оставили первые пять столбцов:
+Были оставлены только первые пять столбцов:
 
 `zcat ENCFF148UQI.bed.gz | cut -f1-5 > H3K9ac_K562.ENCFF148UQI.hg38.bed` 
 
 `zcat ENCFF891CHI.bed.gz | cut -f1-5 > H3K9ac_K562.ENCFF891CHI.hg38.bed`
 
-## Гистограммы длин участков 
-
-![alt text]()
+## Гистограммы длин участков пиков гистоновой метки
 
 <p float="left">
   <img width="45%" src="https://github.com/zradmila/hse21_H3K9ac_ZDNA_human/blob/main/images/len_hist.H3K9ac_K562.ENCFF148UQI.hg38.png" />
@@ -30,7 +30,6 @@
   <img width="45%" src="https://github.com/zradmila/hse21_H3K9ac_ZDNA_human/blob/main/images/len_hist.H3K9ac_K562.ENCFF891CHI.hg38.png" />
   <img width="45%" src="https://github.com/zradmila/hse21_H3K9ac_ZDNA_human/blob/main/images/len_hist.H3K9ac_K562.ENCFF891CHI.hg19.png" />
 </p>
-
 
 ## Распредление длин пиков после фильтраци ( < 5000)
 
@@ -44,20 +43,18 @@
   <img width="45%" src="https://github.com/zradmila/hse21_H3K9ac_ZDNA_human/blob/main/images/filter_peaks.H3K9ac_K562.ENCFF891CHI.hg19.filtered.hist.png" />
 </p>
 
-## Расположение пиков гистоновой метки H3R9ac относительно аннотироанных генов
+## Расположение пиков гистоновой метки H3K9ac относительно аннотироанных генов
+
 <p float="left">
   <img width="45%" src="https://github.com/zradmila/hse21_H3K9ac_ZDNA_human/blob/main/images/chip_seeker.H3K9ac_K562.ENCFF148UQI.hg19.filtered.plotAnnoPie.png" />
   <img width="45%" src="https://github.com/zradmila/hse21_H3K9ac_ZDNA_human/blob/main/images/chip_seeker.H3K9ac_K562.ENCFF891CHI.hg19.filtered.plotAnnoPie.png" />
 </p>
 
-
-
-
 Объединяем файлы с пиками с помощью bedtools
 
 `cat  *.filtered.bed  |   sort -k1,1 -k2,2n   |   bedtools merge   >  H3K9ac_K562.merge.hg19.bed`
 
-Визуализируем в геномном браузере 
+Визуализируем в геномном браузере файлы с пиками и файл с объединенными пиками: 
 
 `track visibility=dense name="ENCFF148UQI"  description="H3K9ac_K562.ENCFF148UQI.hg19.filtered.bed"
 https://github.com/zradmila/hse21_H3K9ac_ZDNA_human/blob/main/data/H3K9ac_K562.ENCFF148UQI.hg19.filtered.bed`
@@ -65,20 +62,23 @@ https://github.com/zradmila/hse21_H3K9ac_ZDNA_human/blob/main/data/H3K9ac_K562.E
 `track visibility=dense name="ENCFF891CHI"  description="H3K9ac_K562.ENCFF148UQI.hg19.filtered.bed"
 https://github.com/zradmila/hse21_H3K9ac_ZDNA_human/blob/main/data/H3K9ac_K562.ENCFF891CHI.hg19.filtered.bed`
 
-Визуализируем объединения на геномном браузере
-
 `track visibility=dense name="ChIP_merge"  color=50,50,200   description="H3K9ас_K562.merge.hg19.bed"
 https://raw.githubusercontent.com/zradmila/hse21_H3K9ac_ZDNA_human/main/data/H3K9ac_K562.merge.hg19.bed`
 
+Убеждаемся в корректности работы bedtools:
 
-## Анализ участков вторичной стр-ры ДНК
+<img alt="ex0" src="https://user-images.githubusercontent.com/49398049/121361021-954d6f00-c93d-11eb-918c-f4be5425020d.png">
+
+
+
+## Анализ участков вторичной структуры ДНК
 ### Распределение длин участков вторичной структуры ДНК 
 
-<img width="45%" src="https://github.com/zradmila/hse21_H3K9ac_ZDNA_human/blob/main/images/len_hist.DeepZ.png" />
+<img width="60%" src="https://github.com/zradmila/hse21_H3K9ac_ZDNA_human/blob/main/images/len_hist.DeepZ.png" />
 
 ### Расположение участков вторичной структуры относительно аннотированных генов
 
-<img width="45%" src="https://github.com/zradmila/hse21_H3K9ac_ZDNA_human/blob/main/images/chip_seeker.DeepZ.plotAnnoPie.png" />
+<img width="60%" src="https://github.com/zradmila/hse21_H3K9ac_ZDNA_human/blob/main/images/chip_seeker.DeepZ.plotAnnoPie.png" />
 
 ## Анализ пересечений гистоновой метки и структуры ДНК
 
@@ -105,6 +105,8 @@ https://raw.githubusercontent.com/zradmila/hse21_H3K9ac_ZDNA_human/main/data/H3K
 Координаты: chr12:69,975,062-69,983,874
 
 <img alt="ex2" src="https://user-images.githubusercontent.com/49398049/121357941-e4de6b80-c93a-11eb-945b-8060e2143dee.png">
+
+[Ссылка](https://genome.ucsc.edu/s/Radmila%20Zaikina/H3K9ac_K562_DeepZ) на сохранную сессию
 
 ### Ассоциируем полученные пересечения с ближайшими генами
 
