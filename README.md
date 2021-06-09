@@ -105,3 +105,8 @@ https://raw.githubusercontent.com/zradmila/hse21_H3K9ac_ZDNA_human/main/data/H3K
 
 Всего [10120](https://github.com/zradmila/hse21_H3K9ac_ZDNA_human/blob/main/data/H3K9ac_K562.intersect_with_DeepZ.genes.txt) пиков, ассоциированных с генами, из них [6928](https://github.com/zradmila/hse21_H3K9ac_ZDNA_human/blob/main/data/H3K9ac_k562.intersect_with_DeepZ.genes_uniq.txt) уникальных
 
+## GO-анализ
+
+Был проведен GO-анализ для уникальных генов с использованием сайта http://pantherdb.org/ 
+
+Полный список категорий приведен [здесь](https://github.com/zradmila/hse21_H3K9ac_ZDNA_human/blob/main/data/pantherdb_GO_analysis.txt.txt)
