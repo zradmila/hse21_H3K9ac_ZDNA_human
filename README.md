@@ -109,4 +109,6 @@ https://raw.githubusercontent.com/zradmila/hse21_H3K9ac_ZDNA_human/main/data/H3K
 
 Был проведен GO-анализ для уникальных генов с использованием сайта http://pantherdb.org/ 
 
+<img width="946" alt="go_analysis" src="https://user-images.githubusercontent.com/49398049/121353676-c6767100-c936-11eb-944e-87e501aa780a.png">
+
 Полный список категорий приведен [здесь](https://github.com/zradmila/hse21_H3K9ac_ZDNA_human/blob/main/data/pantherdb_GO_analysis.txt.txt)
