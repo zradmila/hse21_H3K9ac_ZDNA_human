@@ -98,6 +98,13 @@ https://raw.githubusercontent.com/zradmila/hse21_H3K9ac_ZDNA_human/main/data/Dee
 `track visibility=dense name="intersect_with_DeepZ"  color=200,0,0  description="H3K9ac_K562.intersect_with_DeepZ.bed"
 https://raw.githubusercontent.com/zradmila/hse21_H3K9ac_ZDNA_human/main/data/H3K9ac_K562.intersect_with_DeepZ.hg19.bed`
 
+Координаты: chr12:46,113,780-46,131,507 
+
+<img alt="ex1" src="https://user-images.githubusercontent.com/49398049/121356735-cdeb4980-c939-11eb-96b4-69a35d2c7a9a.png">
+
+Координаты: chr12:69,975,062-69,983,874
+
+<img alt="ex2" src="https://user-images.githubusercontent.com/49398049/121357941-e4de6b80-c93a-11eb-945b-8060e2143dee.png">
 
 ### Ассоциируем полученные пересечения с ближайшими генами
 
