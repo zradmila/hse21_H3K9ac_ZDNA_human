@@ -57,10 +57,10 @@
 Визуализируем в геномном браузере файлы с пиками и файл с объединенными пиками: 
 
 `track visibility=dense name="ENCFF148UQI"  description="H3K9ac_K562.ENCFF148UQI.hg19.filtered.bed"
-https://github.com/zradmila/hse21_H3K9ac_ZDNA_human/blob/main/data/H3K9ac_K562.ENCFF148UQI.hg19.filtered.bed`
+https://raw.githubusercontent.com/zradmila/hse21_H3K9ac_ZDNA_human/main/data/H3K9ac_K562.ENCFF148UQI.hg19.filtered.bed`
 
-`track visibility=dense name="ENCFF891CHI"  description="H3K9ac_K562.ENCFF148UQI.hg19.filtered.bed"
-https://github.com/zradmila/hse21_H3K9ac_ZDNA_human/blob/main/data/H3K9ac_K562.ENCFF891CHI.hg19.filtered.bed`
+`track visibility=dense name="ENCFF891CHI"  description="H3K9ac_K562.ENCFF891CHI.hg19.filtered.bed"
+https://raw.githubusercontent.com/zradmila/hse21_H3K9ac_ZDNA_human/main/data/H3K9ac_K562.ENCFF891CHI.hg19.filtered.bed`
 
 `track visibility=dense name="ChIP_merge"  color=50,50,200   description="H3K9ас_K562.merge.hg19.bed"
 https://raw.githubusercontent.com/zradmila/hse21_H3K9ac_ZDNA_human/main/data/H3K9ac_K562.merge.hg19.bed`
