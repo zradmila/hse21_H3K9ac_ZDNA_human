@@ -72,5 +72,36 @@ https://raw.githubusercontent.com/zradmila/hse21_H3K9ac_ZDNA_human/main/data/H3K
 
 
 ## Анализ участков вторичной стр-ры ДНК
-### Распределение длин участков вторичной структуры ДНК и расположение учасктов относительно аннотированных участков
+### Распределение длин участков вторичной структуры ДНК 
+
+<img width="45%" src="https://github.com/zradmila/hse21_H3K9ac_ZDNA_human/blob/main/images/len_hist.DeepZ.png" />
+
+### Расположение участков вторичной структуры относительно аннотированных генов
+
+<img width="45%" src="https://github.com/zradmila/hse21_H3K9ac_ZDNA_human/blob/main/images/chip_seeker.DeepZ.plotAnnoPie.png" />
+
+## Анализ пересечений гистоновой метки и структуры ДНК
+
+Находим пересечения между гистоновой меткой и ZDNA
+
+`bedtools intersect -a DeepZ.bed -b H3K9ac_K562.merge.hg19.bed > H3K9ac_K562.intersect_with_DeepZ.hg19.bed`
+
+### Распределние длин участков пересечений
+
+<img width="45%" src="https://github.com/zradmila/hse21_H3K9ac_ZDNA_human/blob/main/images/len_hist.H3K9ac_K562.intersect_with_DeepZ.hg19.png" />
+
+### Визуализация в геномном браузере исходных участков структуры ДНК, а также их пересечения с гистоновой меткой
+
+`track visibility=dense name="DeepZ"  color=0,200,0  description="DeepZ"
+https://raw.githubusercontent.com/zradmila/hse21_H3K9ac_ZDNA_human/main/data/DeepZ.bed`
+
+`track visibility=dense name="intersect_with_DeepZ"  color=200,0,0  description="H3K9ac_K562.intersect_with_DeepZ.bed"
+https://raw.githubusercontent.com/zradmila/hse21_H3K9ac_ZDNA_human/main/data/H3K9ac_K562.intersect_with_DeepZ.hg19.bed`
+
+
+### Ассоциируем полученные пересечения с ближайшими генами
+
+<img width="45%" src="https://github.com/zradmila/hse21_H3K9ac_ZDNA_human/blob/main/images/chip_seeker.H3K9ac_K562.intersect_with_DeepZ.hg19.plotAnnoPie.png" />
+
+Всего [10120](https://github.com/zradmila/hse21_H3K9ac_ZDNA_human/blob/main/data/H3K9ac_K562.intersect_with_DeepZ.genes.txt) пиков, ассоциированных с генами, из них [6928](https://github.com/zradmila/hse21_H3K9ac_ZDNA_human/blob/main/data/H3K9ac_k562.intersect_with_DeepZ.genes_uniq.txt) уникальных
 
